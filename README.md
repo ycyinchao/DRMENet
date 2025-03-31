@@ -6,13 +6,13 @@
 
 # 1. Abstract
 
-> Camouflaged Object Detection (COD) is a promising yet challenging task that aims to segment objects hidden in intricate surroundings. Current methods often struggle with identifying background regions that resemble camouflaged objects, posing a significant challenge. To mitigate this issue, we propose a novel Dual Region Mutual Enhancement Network (DRMENet), which separately extracts camouflaged object and background region features and these branches mutually assist each other to refine their respective region features. Specifically, in the foreground segmentation branch, we utilize the Background-assisted Foreground Region Enhancement (BFRE) subnetwork to enhance camouflaged object region features with background information. BFRE subnetwork consists of two parts: the Background-subtracted Foreground Refinement (BFR) module and the Scale-wise Feature Capturing (SFC) module, where the former obtains corresponding camouflaged object region features through cross-layer refinement with the assistance of background region features, and the latter captures scale-wise features and outputs a side output for region prediction result. Additionally, considering the noise present in low-level visual features, we introduce the Semantic-Guided Refinement (SGR) module, which progressively refines visual features based on enhanced semantic features. Experiments on challenging datasets show DRMENet's superiority over the existing state-of-the-art methods. 
+> Camouflaged Object Detection (COD) is a promising yet challenging task that aims to segment objects hidden in intricate surroundings. Current methods often struggle with identifying background regions that resemble camouflaged objects, posing a significant challenge. To mitigate this issue, we propose a novel Dual Region Mutual Enhancement Network (DRMENet), which separately extracts camouflaged object and background region features and these branches mutually assist each other to refine their respective region features. Specifically, in the foreground segmentation branch, we utilize the Background-assisted Foreground Region Enhancement (BFRE) subnetwork to enhance camouflaged object region features with background information. BFRE subnetwork consists of two parts: the Background-subtracted Foreground Refinement (BFR) module and the Scale-wise Feature Capturing (SFC) module, where the former obtains corresponding camouflaged object region features through cross-layer refinement with the assistance of background region features, and the latter captures scale-wise features and outputs a side output for region prediction result. Additionally, considering the noise present in low-level visual features, we introduce the Semantic-Guided Refinement (SGR) module, which progressively refines visual features based on enhanced semantic features. Experiments on challenging datasets show DRMENet's superiority over the existing state-of-the-art methods. The source codes will be available at \href{https://github.com/ycyinchao/DRMENet}{https://github.com/ycyinchao/DRMENet}.
 
 
 
 # 2. Results
 
-![](./images/sota.jpg)
+![](./images/sota.png)
 
 
 
@@ -45,7 +45,7 @@ The pretrained model is stored in [Google Drive](https://drive.google.com/file/d
 ## 3.4 Train
 
 ```bash
-python Train.py --train_path 'the path of TrainDataset' --test_path 'the path of TestDataset'
+python Train.py
 ```
 
 Our well-trained model is stored in [Google Drive](https://drive.google.com/file/d/1bDPSdXAaXpGLrxbkB8W9stY8WJefRpU6/view?usp=drive_link), which should be moved into the fold './checkpoints/DRMENet_384/'.
@@ -77,7 +77,10 @@ the results of evaluation are also in [Google Drive](https://drive.google.com/fi
 Please kindly cite our paper if you find it's helpful in your work.
 
 ```
-
+@article{yin5127588dual,
+  title={Dual Region Mutual Enhancement Network for Camouflaged Object Detection},
+  author={Yin, Chao and Li, Xiaoqiang},
+}
 ```
 
 
